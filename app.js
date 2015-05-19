@@ -6,6 +6,7 @@ var pubsub = express();
 
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
+var bodyparser = require('body-parser');
 
 var subSocket = require('./lib/subscribe');
 var badges = require('./models/badges');
@@ -15,7 +16,7 @@ var pubsubctrl = require('./controllers/pubsub');
 /*
 * Parse data from incoming requests
 */
-//pubsub.use(express.json());
+app.use(bodyparser.json());
 
 /*
 * Accept POST request and then publish the body of the request

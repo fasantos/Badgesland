@@ -28,7 +28,7 @@ body {
   transform: rotateY(-90deg);
   height: 220px;
   margin: 20px;
-  opacity: 1;
+  opacity: 0;
   width: 220px;
 }
 
