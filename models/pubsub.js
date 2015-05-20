@@ -4,7 +4,7 @@ var redis = require('../lib/redis');
 var broadcast = require('../lib/broadcast');
 var _ = require('underscore');
 var io = require('socket.io-client');
-var socket = io.connect('http://node-soup.herokuapp.com:80');
+var socket = io.connect('https://node-soup.herokuapp.com:80');
 
 socket.on('badge', function(badge) {
 	redis.lpush('badges', JSON.stringify(badge), function (err,data) {
