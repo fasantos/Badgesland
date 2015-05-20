@@ -38,7 +38,7 @@ exports.send = function(req, res, next){
 */
 exports.get = function (req, res, next) {
 	model.get(function (err, data){
-		res.status(err? 503: 200).json({
+		res.status(err? 400: 200).json({
 			error: err? true: null,
 			errorMessage: err? err: null,
 			data: data
